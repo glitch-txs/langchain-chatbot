@@ -1,13 +1,31 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react'
+import axios from 'axios'
+import React, { ChangeEvent, Dispatch, FormEvent, SetStateAction, useState } from 'react'
 
-type Props = {}
+type Props = {
+  setMessages: Dispatch<SetStateAction<Messages>>
+}
 
-const Input = (props: Props) => {
+const Input = ({setMessages}: Props) => {
+
   const [prompt, setPrompt] = useState<string>('')
 
   const handleSubmit = (e: FormEvent)=>{
     e.preventDefault()
-    console.log(prompt)
+    setPrompt('')
+    setMessages(p => [...p, {
+      id: p.length + 1,
+      type: 'human',
+      message: prompt
+    }])
+    axios.post('/api/openAI', { message: prompt })
+    .then(res => {
+      setMessages(p => [...p, {
+        id: p.length + 2,
+        type: 'AI',
+        message: res.data
+      }])
+    })
+    .catch((e) => console.log(e))
   }
 
   return (

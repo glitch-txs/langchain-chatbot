@@ -22,16 +22,14 @@
 
 .aiMessage{
   align-self: self-start;
-  box-shadow: rgb(88, 95, 95) 1px 1px 4px inset, rgb(20, 20, 20) -1px -1px 4px inset;
   border-radius: 16px 16px 16px 6px;
-  background-color: rgb(39, 42, 42);
+  background-color: #404040;
   padding: 8px 12px;
 }
 
 .humanMessage{
   align-self: self-end;
   padding: 8px 12px;
-  background-color: rgb(13, 125, 242);
-  box-shadow: rgb(102, 177, 255) 1px 1px 4px inset, rgb(15, 75, 138) -1px -1px 4px inset;
+  background-color: #bc00008e;
   border-radius: 16px 16px 6px;
 }

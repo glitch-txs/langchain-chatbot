@@ -2,7 +2,7 @@ import { PineconeClient, UpsertRequest } from "@pinecone-database/pinecone";
 import { PineconeStore } from "langchain/vectorstores";
 import { OpenAIEmbeddings } from "langchain/embeddings";
 import { OpenAI } from "langchain/llms";
-import { callVectorDBQAChain } from "lib/vectorstoreutils";
+import { callVectorDBQAChain } from "./vectorstoreutils";
 
 const pinecone = new PineconeClient();
 

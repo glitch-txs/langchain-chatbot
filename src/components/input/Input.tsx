@@ -17,7 +17,7 @@ const Input = ({setMessages}: Props) => {
       type: 'human',
       message: prompt
     }])
-    axios.post('/api/openAI', { message: prompt })
+    axios.post('/api/langChain', { message: prompt })
     .then(res => {
       setMessages(p => [...p, {
         id: p.length + 2,
